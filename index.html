@@ -1,45 +1,25 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nothing here yet_</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Consolas', 'Courier New', Courier, monospace;
-            padding: 20px;
-        }
-
-        .terminal {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-
-        .cursor {
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% {
-                opacity: 1;
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #rick {
+                display: none;
             }
-            50% {
-                opacity: 0;
+        </style>
+        <script>
+            function playRick() {
+                const rick = document.getElementById('rick'); // get element
+                rick.style.display = 'block'; // unhide video
+                rick.requestFullscreen(); // enter full screen mode
+                rick.setAttribute('src', rick.getAttribute('src') + '?autoplay=1'); // autoplay video
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="terminal">
-        Nothing here yet<span class="cursor">_</span>
-    </div>
-</body>
+        </script>
+    </head>
+    <body>
+        <iframe id="rick" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button onclick="playRick();">Click Me</button>
+    </body>
 </html>
